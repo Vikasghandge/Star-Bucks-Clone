@@ -103,5 +103,18 @@ pipeline {
                 sh "docker run -d --name Star-Bucks -p 3000:3000 ${DOCKER_IMAGE}"
             }
         }
+        stage('Deploy to Kubernetes') {
+            steps {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'k8s']]) {
+                    dir('Hotstar-Clone-main/K8S') {
+                        sh '''
+                            aws eks --region ap-south-1 update-kubeconfig --name EKS_CLOUD
+                            kubectl apply -f deployment.yml
+                            kubectl apply -f service.yml
+                        '''
+                    }
+                }
+            }
+        }
     }
 }
