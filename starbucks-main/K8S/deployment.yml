@@ -6,14 +6,14 @@ spec:
   replicas: 1  # Number of desired replicas
   selector:
     matchLabels:
-      app: startbucks
+      app: starbucks
   template:
     metadata:
       labels:
-        app: startbucks
+        app: starbucks
     spec:
       containers:
-      - name: startbucks
+      - name: starbucks
         image: ghandgevikas/star-bucks:latest
         ports:
         - containerPort: 3000  # Port your application listens on
