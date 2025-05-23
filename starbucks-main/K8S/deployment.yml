@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: hotstar
+        app: sartbucks
     spec:
       containers:
       - name: hotstar
