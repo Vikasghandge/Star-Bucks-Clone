@@ -4,7 +4,7 @@ metadata:
   name: starbucks-service
 spec:
   selector:
-    app: hotstar
+    app: starbucks
   ports:
     - protocol: TCP
       port: 80  # Port exposed by the service externally (outside the cluster)
