@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hotstar-deployment
+  name: starbucks-deployment
 spec:
   replicas: 1  # Number of desired replicas
   selector:
