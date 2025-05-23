@@ -13,7 +13,7 @@ spec:
         app: startbucks
     spec:
       containers:
-      - name: hotstar
+      - name: startbucks
         image: ghandgevikas/hoststar:latest
         ports:
         - containerPort: 3000  # Port your application listens on
