@@ -6,7 +6,7 @@ spec:
   replicas: 1  # Number of desired replicas
   selector:
     matchLabels:
-      app: hotstar
+      app: start
   template:
     metadata:
       labels:
