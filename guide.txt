@@ -1,0 +1,8 @@
+some vimp steps:
+create eks-cluster.
+to deploy applcation on k8s first of all change the owener ship of /var/lib/jenkins use below command
+chown -R jenkins:jenkins /var/lib/jenkins
+add jenkins user into docker group using === usermod -aG docker jenkins
+su jenkins and run below command 
+aws eks update-kubeconfig --name EKS-CLOUD --region ap-south-1
+aws eks update-kubeconfig --name <cluster-name> --region <region-name>

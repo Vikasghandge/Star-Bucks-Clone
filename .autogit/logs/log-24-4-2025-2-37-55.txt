@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+Sat May 24 2025 02:37:55 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* starbucks-main/K8S/deployment.yml
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
