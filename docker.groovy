@@ -46,13 +46,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir('Hotstar-Clone-main') {
+                dir('starbucks-main') {
                     sh 'npm install'
                 }
             }
         }
 
-        // Optional OWASP Dependency Check (commented)
+    //    // Optional OWASP Dependency Check (commented)
         /*
         stage('OWASP FS SCAN') {
             steps {
