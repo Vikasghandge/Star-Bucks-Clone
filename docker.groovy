@@ -22,7 +22,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'dev', url: 'https://github.com/Vikasghandge/HOST-STAR-CLONE.git'
+                git branch: '', url: 'https://github.com/Vikasghandge/Star-Bucks-Clone.git'
             }
         }
 
