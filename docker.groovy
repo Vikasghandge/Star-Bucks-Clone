@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = 'ghandgevikas/hoststar:latest'
+        DOCKER_IMAGE = 'ghandgevikas/Star-bucks:latest'
         SCANNER_HOME = tool 'sonar-scanner'
        // CLUSTER_NAME = 'EKS-CLOUD'
        // REGION = 'ap-south-1'
