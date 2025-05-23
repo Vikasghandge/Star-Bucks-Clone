@@ -75,7 +75,7 @@ pipeline {
 
         stage('Docker Build & Push') {
             steps {
-                dir('Hotstar-Clone-main') {
+                dir('starbucks-main') {
                     script {
                         withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                             sh "docker build -t ${DOCKER_IMAGE} ."
