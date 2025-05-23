@@ -106,7 +106,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'k8s']]) {
-                    dir('/K8S') {
+                    dir('starbucks-main/K8S') {
                         sh '''
                             aws eks --region ap-south-1 update-kubeconfig --name EKS_CLOUD
                             kubectl apply -f deployment.yml
