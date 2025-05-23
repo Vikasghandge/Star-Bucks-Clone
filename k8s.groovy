@@ -9,8 +9,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'ghandgevikas/star-bucks:latest'
         SCANNER_HOME = tool 'sonar-scanner'
-       // CLUSTER_NAME = 'EKS-CLOUD'
-       // REGION = 'ap-south-1'
+        CLUSTER_NAME = 'EKS-CLOUD'
+        REGION = 'ap-south-1'
     }
 
     stages {
