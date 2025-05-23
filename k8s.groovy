@@ -98,8 +98,8 @@ pipeline {
             }
         }
 
-        stage('Deploy Docker Locally') {
-            steps {
+   //     stage('Deploy Docker Locally') {
+     //       steps {
                 sh "docker run -d --name Star-Bucks -p 3000:3000 ${DOCKER_IMAGE}"
             }
         }
