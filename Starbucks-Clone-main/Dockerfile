@@ -1,20 +1,26 @@
-# Use Node.js Alpine base image
-FROM node:alpine
+# Use official Node.js image
+FROM node:18
 
-# Create and set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package.json package-lock.json /app/
-
-# Install dependencies
+# Copy package files and install dependencies
+COPY package*.json ./
 RUN npm install
 
-# Copy the entire codebase to the working directory
-COPY . /app/
+# Copy the rest of the app
+COPY . .
 
-# Expose the port your app runs on (replace <PORT_NUMBER> with your app's actual port)
-EXPOSE 3000
+# Build the app (React/Vue/etc.)
+RUN npm run build
 
-# Define the command to start your application (replace "start" with the actual command to start your app)
-CMD ["npm", "start"]
+# Install Firebase CLI globally
+RUN npm install -g firebase-tools
+
+# Set Firebase project config
+COPY firebase.json ./
+COPY .firebaserc ./
+
+# Serve the build folder using Firebase CLI
+EXPOSE 5000
+CMD ["firebase", "serve", "--only", "hosting", "--port", "5000"]
