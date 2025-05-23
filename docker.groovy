@@ -52,15 +52,15 @@ pipeline {
             }
         }
 
-       // /*
-        // Optional: OWASP Dependency Check
-    //    stage('OWASP FS SCAN') {
-      //      steps {
-      //          dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
-//                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-  //          }
-//        }
-  //      */
+        // Optional OWASP Dependency Check (commented)
+        /*
+        stage('OWASP FS SCAN') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        */
 
         stage('Docker Scout FS') {
             steps {
@@ -100,8 +100,8 @@ pipeline {
 
         stage('Deploy Docker Locally') {
             steps {
-               sh "docker run -d --name hotstar -p 3000:3000 ${DOCKER_IMAGE}"
+                sh "docker run -d --name hotstar -p 3000:3000 ${DOCKER_IMAGE}"
             }
         }
-
-        
+    }
+}
